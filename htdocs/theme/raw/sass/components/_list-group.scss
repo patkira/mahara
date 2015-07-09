@@ -40,6 +40,10 @@
         border-left: 0;
         border-right: 0;
     }
+
+    &.attachment-incontent {
+        border-left: 1px solid #ddd; // Full Journal attachment list block
+    }
 }
 
 
