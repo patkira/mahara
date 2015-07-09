@@ -1185,5 +1185,7 @@ $string['hspace'] = 'Horizontal space';
 $string['border'] = 'Border width';
 $string['alignment'] = 'Alignment';
 
+$string['version.'] = 'v.'; // version shortname, used when duplicating pages and collections
+
 // Miscellaneous (please keep these alphabetized)
 $string['cli_incorrect_value'] = 'Incorrect value, please retry.';
