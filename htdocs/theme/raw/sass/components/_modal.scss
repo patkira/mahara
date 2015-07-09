@@ -19,7 +19,7 @@ $width-sm: 90%;
 .modal-shown,
 .page-modal {
     .modal-content {
-        max-height: 90%;
+        max-height: 100%;
     }
     .modal-body {
         @include border-bottom-radius(3px);
@@ -33,6 +33,7 @@ $width-sm: 90%;
 .page-modal {
      .modal-content {
         overflow: hidden;
+        max-height: 90%;
      }
 }
 

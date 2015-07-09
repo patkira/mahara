@@ -42,15 +42,15 @@
     }
 }
 
+
 .list-group-item-heading {
     font-family: $font-family-serif;
     font-weight: 300;
     a {
         &:hover {
-            text-decoration: none;
             color: $link-color;
             &.inner-link {
-                 text-decoration: underline;
+                text-decoration: underline;
             }
             .metadata {
                 color: $link-color;
