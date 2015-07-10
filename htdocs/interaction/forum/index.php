@@ -69,7 +69,7 @@ if ($forums) {
                     'submit' => array(
                     'type'  => 'button',
                     'usebuttontag' => true,
-                    'class' => 'btn btn-default btn-xs',
+                    'class' => 'btn-default btn-xs',
                     'value' => $forum->subscribed ? '<span class="fa fa-lg fa-times prs text-danger"></span> ' . get_string('Unsubscribe', 'interaction.forum') : '<span class="fa fa-lg fa-star prs text-success"></span> ' . get_string('Subscribe', 'interaction.forum'),
                     'value' => $forum->subscribed ? '<span class="icon icon-lg icon-times prs text-danger"></span> ' . get_string('Unsubscribe', 'interaction.forum') : '<span class="icon icon-lg icon-star prs text-success"></span> ' . get_string('Subscribe', 'interaction.forum'),
                         // 'help' => $i == 0 ? true : false

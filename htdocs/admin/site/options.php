@@ -766,7 +766,7 @@ $siteoptionform = array(
 $siteoptionform['elements']['submit'] = array(
     'type'  => 'button',
     'usebuttontag' => true,
-    'class' => 'btn btn-success',
+    'class' => 'btn-success',
     'value' => get_string('updatesiteoptions', 'admin')
 );
 

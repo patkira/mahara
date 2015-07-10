@@ -7,7 +7,7 @@
                 <span class="icon-plus icon"></span>
             </button>
         {/if}
-            <button name="action_removecolumn_row_{$row}_column_{$column}" alt="{str tag='remove' section='view'}" title="{str tag='removecolumn' section='view'}" class="js-remove-column removecolumn text-center btn btn-primary btn-sm">
+            <button name="action_removecolumn_row_{$row}_column_{$column}" alt="{str tag='remove' section='view'}" title="{str tag='removecolumn' section='view'}" class="js-remove-column removecolumn text-center btn btn-default btn-sm">
                 <span class="icon-times-circle icon"></span>
             </button>
         {if $column == $numcolumns}

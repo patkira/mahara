@@ -40,8 +40,12 @@ function pieform_element_button(Pieform $form, $element) {/*{{{*/
     }
 
     if (isset($element['confirm'])) {
+
         $element['data-confirm'] = Pieform::hsc($element['confirm']);
     }
+
+    $element['class'] .= ' btn';
+
 
     if (isset($element['usebuttontag']) && $element['usebuttontag'] === true) {
 
@@ -59,6 +63,8 @@ function pieform_element_button(Pieform $form, $element) {/*{{{*/
         if (isset($element['action'])) {
             $action = 'formaction="' . Pieform::hsc($element['action']) . '" ';
         }
+
+
 
         $button = '<button '
         . $value . $action . $type

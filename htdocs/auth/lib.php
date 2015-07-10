@@ -903,7 +903,7 @@ function auth_check_required_fields() {
     else {
         $elements['submit'] = array(
             'type' => 'submit',
-            'class' => 'btn btn-success',
+            'class' => 'btn-success',
             'value' => get_string('submit')
         );
 
@@ -1271,7 +1271,7 @@ function auth_get_login_form_elements() {
         ),
         'submit' => array(
             'type'  => 'submit',
-            'class' => 'btn btn-success btn-block mts mbl',
+            'class' => 'btn-success btn-block mts mbl',
             'value' => get_string('login')
         ),
         'register' => array(

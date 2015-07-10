@@ -10,7 +10,8 @@ $width-sm: 90%;
 }
 
 .modal-tinymce,
-.modal-docked {
+.modal-docked.modal-shown,
+.modal-docked.in {
     background: rgba(0,0,0,0.09);
     display: block;
     .modal-content {

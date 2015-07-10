@@ -3751,7 +3751,7 @@ class View {
                          'submit' => array(
                             'type' => 'button',
                             'usebuttonclass' => true,
-                            'class' => 'btn btn-primary input-group-btn no-label',
+                            'class' => 'btn-primary input-group-btn no-label',
                             'value' => get_string('search')
                         )
                     )
@@ -6094,7 +6094,7 @@ function create_view_form($group=null, $institution=null, $template=null, $colle
             'submit' => array(
                 'type'  => 'button',
                 'usebuttontag' => true,
-                'class' => 'btn btn-default',
+                'class' => 'btn-default',
                 'value' => '<span class="icon icon-plus icon-lg text-success prs"></span>' . get_string('createview', 'view'),
             ),
             'submitcollection' => array(
@@ -6129,7 +6129,7 @@ function create_view_form($group=null, $institution=null, $template=null, $colle
         $form['elements']['submitcollection'] = array(
             'type'  => 'button',
             'usebuttontag' => true,
-            'class' => 'btn btn-sm btn-default',
+            'class' => 'btn-sm btn-default',
             'value' => get_string('copycollection', 'collection'),
         );
     }
@@ -6139,7 +6139,7 @@ function create_view_form($group=null, $institution=null, $template=null, $colle
             'value' => $template,
         );
         $form['elements']['submit']['value'] = get_string('copyview', 'view');
-        $form['elements']['submit']['class'] = 'btn btn-default btn-sm mrm';
+        $form['elements']['submit']['class'] = 'btn-default btn-sm mrm';
         $form['name'] .= $template;
     }
     return $form;
@@ -6331,7 +6331,7 @@ function view_group_submission_form($view, $tutorgroupdata, $returnto=null) {
                     'submit' => array(
                         'type' => 'button',
                         'usebuttontag' => true,
-                        'class' => 'btn btn-primary input-group-btn',
+                        'class' => 'btn-primary input-group-btn',
                         'value' => get_string('submit')
                     )
                 ),
