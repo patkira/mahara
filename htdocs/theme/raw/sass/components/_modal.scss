@@ -9,8 +9,20 @@ $width-sm: 90%;
     border: 1px solid $modal-header-border-color;
 }
 
+
+.modal-loading {
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+    @extend .icon;
+    @extend .icon-spinner;
+    @extend .icon-pulse;
+    @extend .icon-3x;
+    @extend .text-watermark;
+}
+
 .modal-tinymce,
-.modal-docked.modal-shown,
+.modal-docked.modal-shown, //non-bootstrap modals are shown by default
 .modal-docked.in {
     background: rgba(0,0,0,0.09);
     display: block;

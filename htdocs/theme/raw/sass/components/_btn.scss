@@ -77,8 +77,8 @@
     }
 }
 
-h1 + div > .btn-top-right,
-.page-header + div.btn-top-right {
+h1 + div > .btn-top-left,
+.page-header + div.btn-top-left {
     float: none;
     margin-bottom: 0;
     @media (min-width: $screen-xs-min) {
@@ -101,6 +101,9 @@ h1 ~ div > .btn-group-top,
 .page-header + .btn-action-list .btn-group-top,
 .nav-tabs +  div.btn-group-top {
     margin-top: -20px;
+}
+
+.btn-group-top {
     float: right;
     position: relative;
     z-index: 1;
@@ -129,7 +132,7 @@ td.btn-group {
         @include clearfix;
         text-align: right;
         float: right;
-        margin-top: -11px;
+        margin-top: -10px;
         margin-bottom:11px;
         @media (min-width: $screen-xs-max ) {
             @include clearfix;
