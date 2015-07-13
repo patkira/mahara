@@ -8,8 +8,7 @@
     </div>
     {$feedback->pagination|safe}
     {if $enablecomments}
-    <a id="add_feedback_link" class="feedback" href="#" data-toggle="modal" data-target="#feedback-form">
-        <span class="icon icon-lg icon-plus prs"></span>
+    <a id="add_feedback_link" class="feedback" href="#" data-toggle="modal-docked" data-target="#feedback-form">
         {str tag=addcomment section=artefact.comment}
     </a>
     {/if}

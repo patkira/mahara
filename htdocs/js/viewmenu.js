@@ -52,7 +52,7 @@ function addFeedbackSuccess(form, data) {
     // Check if the form is displayed inside a modal
     // then close the modal
     if ($j('#feedback-form').length) {
-        $j('#feedback-form').modal('hide');
+        dock.hide();
     }
 }
 

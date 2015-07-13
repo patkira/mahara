@@ -22,8 +22,7 @@ $width-sm: 90%;
 }
 
 .modal-tinymce,
-.modal-docked.modal-shown, //non-bootstrap modals are shown by default
-.modal-docked.in {
+.modal-docked {
     background: rgba(0,0,0,0.09);
     display: block;
     .modal-content {
@@ -39,6 +38,12 @@ $width-sm: 90%;
         @include border-bottom-radius(3px);
         max-height: 90%;
         overflow: auto;
+        &.flush {
+            padding: 0;
+        }
+        .list-group.flush {
+            margin: -15px;
+        }
     }
     .modal-dialog {
         height: 100%;

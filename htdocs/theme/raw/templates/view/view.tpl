@@ -122,11 +122,14 @@
         {/if}
 
         {if $feedback->position eq 'blockinstance' && $enablecomments}
-        <div class="feedback in-block modal fade" id="feedback-form">
+        <div class="feedback modal modal-docked" id="feedback-form">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" data-dismiss="modal-docked" aria-label="Close">
+                            <span class="times">&times;</span>
+                            <span class="sr-only">{str tag=Close}</span>
+                        </button>
                         <h4 class="modal-title">
                             <span class="icon icon-lg icon-comments prm"></span>
                             {str tag=addcomment section=artefact.comment}
@@ -164,7 +167,7 @@
 </div>
 
 {if $visitstring}
-<div class="metadata text-right">
+<div class="metadata text-right mtxl">
     {$visitstring}
 </div>
 {/if}

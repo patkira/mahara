@@ -56,7 +56,7 @@
         {if $options.viewid && $post->allowcomments}
         <div class="comments ptm pbl">
             {if $post->commentcount > 0}
-            <a id="blockpost_{$post->id}" class="commentlink" data-toggle="modal" data-target="#feedbacktable_0{$post->id}{$options.blockid}" href="#">
+            <a id="blockpost_{$post->id}" class="commentlink" data-toggle="modal-docked" data-target="#feedbacktable_0{$post->id}{$options.blockid}" href="#">
                 {str tag=Comments section=artefact.comment} ({$post->commentcount})
             </a>
             {else}
@@ -68,17 +68,17 @@
                 {/if}
             {/if}
         </div>
-        <div class="feedback modal modal-docked modal-docked-right" id="feedbacktable_0{$post->id}{$options.blockid}">
+        <div class="feedback modal modal-docked" id="feedbacktable_0{$post->id}{$options.blockid}">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header clearfix">
-                        <button class="deletebutton close" data-dismiss="modal">
+                        <button class="close" data-dismiss="modal-docked">
                             <span class="times">&times;</span>
                             <span class="sr-only">{str tag=Close}</span>
                         </button>
                         <h4 class="modal-title pull-left">
-                            <span class="icon icon-lg icon-comments prm"></span>
-                            {str tag=Comments section=artefact.comment} -
+                            <span class="icon icon-lg icon-comments"></span>
+                            {str tag=Comments section=artefact.comment} |
                             {$post->title}
                         </h4>
                         {if $post->allowcomments}
@@ -88,7 +88,7 @@
                         </a>
                         {/if}
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body flush">
                     {$post->comments->tablerows|safe}
                     </div>
                 </div>
