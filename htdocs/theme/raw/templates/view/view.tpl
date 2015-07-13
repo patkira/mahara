@@ -8,7 +8,8 @@
 
 {if $maintitle}
 <h1 id="viewh1" class="page-header">
-    {$maintitle|safe}
+    {if $title}<span class="subsection-heading">{$title}</span>{/if}
+    <span class="section-heading">{if $title} | {/if}{$maintitle|safe}</span>
 </h1>
 {/if}
 
@@ -69,11 +70,7 @@
     {/if}
 </div>
 
-{if $collection}
-{include file=collectionnav.tpl}
-{/if}
-
-<div class="ptxl">
+<div class="pbxl with-heading metadata">
     {assign var='author_link_index' value=1}
     {include file=author.tpl}
 
@@ -85,7 +82,11 @@
     {/if}
 </div>
 
-<div id="view-description">{$viewdescription|clean_html|safe}</div>
+{if $collection}
+    {include file=collectionnav.tpl}
+{/if}
+
+<div id="view-description" class="pbl">{$viewdescription|clean_html|safe}</div>
 
 <div id="view">
     <div id="bottom-pane">
