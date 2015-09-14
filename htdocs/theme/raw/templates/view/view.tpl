@@ -111,6 +111,7 @@
         {/if}
 
         {if $feedback->position eq 'base'}
+        <div class="comment-container">
             {if $feedback->count || $enablecomments}
             <h3 class="title">
                 {str tag="Comments" section="artefact.comment"}
@@ -119,11 +120,16 @@
             <hr />
             {/if}
             {* Do not change the id because it is used by paginator.js *}
-            <div id="feedbacktable" class="feedbacktable feedbackbase fullwidth">
+            <div id="feedbacktable" class="feedbacktable js-feedbackbase fullwidth">
                 {$feedback->tablerows|safe}
             </div>
             {$feedback->pagination|safe}
             {/if}
+
+            {if $enablecomments}
+                {include file="view/viewmenu.tpl"}
+            {/if}
+        </div>
         {/if}
 
         {if $feedback->position eq 'blockinstance' && $enablecomments}
@@ -146,8 +152,6 @@
                 </div>
             </div>
         </div>
-        {elseif $feedback->position eq 'base' && $enablecomments}
-            {include file="view/viewmenu.tpl"}
         {/if}
 
         {if $LOGGEDIN}
