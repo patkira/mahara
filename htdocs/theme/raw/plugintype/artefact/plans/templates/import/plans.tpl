@@ -1,5 +1,5 @@
 {if count($entryplans)}
-<div class="section fullwidth">
+<div class="section import">
     <h2>{str tag=plan section=artefact.plans}</h2>
 </div>
 {foreach from=$entryplans item=plan}
@@ -73,11 +73,9 @@
                     {/if}
                 {/foreach}
             </div>
-            <div class="cb"></div>
         </div>
     {/foreach}
     </div>
-    <div class="cb"></div>
 </div>
 {/foreach}
 <script type="application/javascript">

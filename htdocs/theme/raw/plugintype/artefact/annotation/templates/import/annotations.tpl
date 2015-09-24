@@ -1,27 +1,31 @@
 {if count($entryannotations)}
-<div class="section fullwidth">
+<div class="section import">
     <h2>{str tag=Annotation section=artefact.annotation}</h2>
 </div>
 {foreach from=$entryannotations item=annotation}
-<div class="{cycle name=rows values='r0,r1'} listrow">
-    <div id="entryannotation" class="indent1">
-        <div class="importcolumn importcolumn1">
-            <h3 class="title">
+<div class="list-group-item">
+    <div id="entryannotation" class="row">
+        <div class="col-md-8">
+            <h3 class="title list-group-item-heading">
             {if $annotation.description}<a class="annotationtitle hidden" href="" id="{$annotation.id}">{/if}
             {$annotation.title|str_shorten_text:80:true}
             {if $annotation.description}</a>{/if}
             </h3>
-            <div id="{$annotation.id}_desc" class="detail">{$annotation.description|clean_html|safe}</div>
+            <div id="{$annotation.id}_desc" class="detail">
+                {$annotation.description|clean_html|safe}
+            </div>
             {if $annotation.tags}
-            <div class="tags">
+            <div class="tags text-small">
                 <strong>{str tag=tags}:</strong> {list_tags owner=0 tags=$annotation.tags}
             </div>
             {/if}
             <div class="annotationfeedback">
-                <strong>{str tag=Annotationfeedback section=artefact.annotation}:</strong> <a class="showannotationfeedback" href="" id="{$annotation.id}">{str tag=nannotationfeedback section=artefact.annotation arg1=count($annotation.annotationfeedback)}</a>
+                <strong>{str tag=Annotationfeedback section=artefact.annotation}:</strong>
+                <!-- <a class="showannotationfeedback" href="" id="{$annotation.id}">{str tag=nannotationfeedback section=artefact.annotation arg1=count($annotation.annotationfeedback)}</a> -->
+                {str tag=nannotationfeedback section=artefact.annotation arg1=count($annotation.annotationfeedback)}
             </div>
         </div>
-        <div class="importcolumn importcolumn2">
+        <div class="col-md-4">
             {if $annotation.duplicateditem}
             <div class="duplicatedannotation">
                 <strong>{str tag=duplicatedannotation section=artefact.annotation}:</strong> <a class="showduplicatedannotation" href="" id="{$annotation.duplicateditem.id}">{$annotation.duplicateditem.title|str_shorten_text:80:true}</a>
@@ -46,13 +50,13 @@
                 {/if}
             {/foreach}
         </div>
-        <div class="cb"></div>
     </div>
-    <div id="{$annotation.id}_annotationfeedback" class="indent2 hidden">
+    {if $annotation.annotationfeedback}<hr>{/if}
+    <div id="{$annotation.id}_annotationfeedback" class="row">
     {foreach from=$annotation.annotationfeedback item=feedback}
-        <div id="annotationfeedbacktitle_{$feedback.id}" class="{cycle name=rows values='r0,r1'} listrow {if $feedback.private}private{else}public{/if}">
-            <div class="importcolumn importcolumn1">
-                <h4 class="title">
+        <div id="annotationfeedbacktitle_{$feedback.id}" class="{if $feedback.private}private{else}public{/if}">
+            <div class="col-md-4">
+                <h4 class="title list-group-item-heading">
                     {if $feedback.description}<a class="annotationfeedbacktitle" href="" id="{$feedback.id}">{/if}
                     {$feedback.title|str_shorten_text:80:true}
                     {if $feedback.description}</a>{/if}
@@ -60,18 +64,18 @@
                 <div id="{$feedback.id}_desc" class="detail hidden">
                     {$feedback.description|clean_html|safe}
                 </div>
-                <span id="annotationfeedbackstatus{$feedback.id}" class="annotationfeedbackstatus">
+                <span id="annotationfeedbackstatus{$feedback.id}" class="annotationfeedbackstatus text-small text-lighttone">
                     {if $feedback.private}
                         {str tag=private section=artefact.annotation}
                     {else}
                         {str tag=public section=artefact.annotation}
                     {/if}
                 </span>
-                <div id="annotationfeedbackdetails_{$feedback.id}" class="annotationfeedbackdetails">
+                <div id="annotationfeedbackdetails_{$feedback.id}" class="annotationfeedbackdetails text-small text-lighttone">
                     {str tag=enteredon section=artefact.annotation} {$feedback.ctime}
                 </div>
             </div>
-            <div class="importcolumn importcolumn2">
+            <div class="col-md-4">
                 {if $feedback.duplicateditem}
                 <div class="duplicatedannotationfeedback">
                     <strong>{str tag=duplicatedannotationfeedback section=artefact.annotation}:</strong> <a class="showduplicatedannotationfeedback" href="" id="{$feedback.duplicateditem.id}">{$feedback.duplicateditem.title|str_shorten_text:80:true}</a>
@@ -88,19 +92,19 @@
                 </div>
                 {/if}
             </div>
-            <div class="importcolumn importcolumn3">
+            <div class="col-md-4">
                 {foreach from=$displaydecisions key=opt item=displayopt}
                     {if !$feedback.disabled[$opt]}
-                    <input id="decision_{$feedback.id}_{$opt}" class="annotationfeedbackdecision" type="radio" name="decision_{$feedback.id}" value="{$opt}"{if $feedback.decision == $opt} checked="checked"{/if}>
-                    <label for="decision_{$feedback.id}_{$opt}">{$displayopt}<span class="accessible-hidden">({$feedback.title})</span></label><br>
+                    <label for="decision_{$feedback.id}_{$opt}">
+                        <input id="decision_{$feedback.id}_{$opt}" class="annotationfeedbackdecision" type="radio" name="decision_{$feedback.id}" value="{$opt}"{if $feedback.decision == $opt} checked="checked"{/if}>
+                        {$displayopt}
+                        <span class="accessible-hidden">({$feedback.title})</span></label><br>
                     {/if}
                 {/foreach}
             </div>
-            <div class="cb"></div>
         </div>
     {/foreach}
     </div>
-    <div class="cb"></div>
 </div>
 {/foreach}
 <script type="application/javascript">

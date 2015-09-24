@@ -1,4 +1,4 @@
-<div class="section fullwidth">
+<div class="section import">
     <h2>{str tag=profile section=artefact.internal}</h2>
 </div>
 <div class="form-group collapsible-group">
@@ -49,7 +49,8 @@
                             <label for="decision_{$fieldvalue.id}_{$opt}">
                                 <input id="decision_{$fieldvalue.id}_{$opt}" class="fieldvaluedecision" type="radio" name="decision_{$fieldvalue.id}" value="{$opt}"{if $fieldvalue.decision == $opt} checked="checked"{/if}>
                                 {$displayopt}
-                                <span class="accessible-hidden sr-only">({str tag=$fieldname section=artefact.internal}: {$fieldvalue.html|safe|strip_tags|str_shorten_text:80:true})</span></label>
+                                <span class="accessible-hidden sr-only">({str tag=$fieldname section=artefact.internal}: {$fieldvalue.html|safe|strip_tags|str_shorten_text:80:true})</span>
+                            </label>
                             {/if}
                         {/foreach}
                     </div>

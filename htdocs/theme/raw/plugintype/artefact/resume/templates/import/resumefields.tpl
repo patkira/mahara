@@ -1,6 +1,8 @@
-<div class="section fullwidth">
+{if count($resumegroup)}
+<div class="section import">
     <h2>{str tag=resume section=artefact.resume}</h2>
 </div>
+{/if}
 {foreach from=$resumegroups item=resumegroup}
 {if count($resumegroup.fields)}
 <fieldset id="{$resumegroup.id}_fs" class="pieform-fieldset collapsible">
