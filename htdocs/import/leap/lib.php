@@ -256,7 +256,7 @@ class PluginImportLeap extends PluginImport {
     public function build_import_entry_requests_form() {
         global $USER;
 
-        $html = '<form name="ier" method="POST" action="">';
+        $html = '<form name="ier" method="POST" action="" class="pieform">';
         $installedplugins = array_map(create_function('$a', 'return $a->name;'), plugins_installed('artefact'));
         $orderedimportplugins = array('internal', 'file', 'blog', 'resume', 'plans', 'annotation');
         foreach ($orderedimportplugins as $plugin) {

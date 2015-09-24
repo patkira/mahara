@@ -1,9 +1,9 @@
-<div class="section fullwidth">
+<div class="section">
     <h2>{str tag=View section=view}</h2>
 </div>
 {foreach from=$entryviews item=view}
 <div class="{cycle name=rows values='r0,r1'} listrow">
-    <div id="entryview" class="indent1 fullwidth">
+    <div id="entryview" class="">
         <div class="importcolumn importcolumn1">
             <h3 class="title">
             {if $view.description}<a class="viewtitle" href="" id="{$view.id}">{/if}
@@ -22,15 +22,6 @@
                 {/if}
             {/foreach}
         </div>
-        <div class="cb"></div>
     </div>
 </div>
 {/foreach}
-<script type="application/javascript">
-    jQuery(function() {
-        jQuery("a.viewtitle").click(function(e) {
-            e.preventDefault();
-            jQuery("#" + this.id + "_desc").toggleClass("hidden");
-        });
-    });
-</script>
