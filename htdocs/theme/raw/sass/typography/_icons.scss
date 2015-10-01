@@ -55,15 +55,22 @@
 .icon-pdf:before {
   content: $fa-var-file-pdf-o;
 }
+
 .icon-html:before {
   content: $fa-var-code;
 }
 
+.icon-view:before,
 .icon-myviews:before,
 .icon-groupviews:before {
   content: $fa-var-file;
 }
 
+.icon-workskill:before,
+.icon-academicskill:before,
+.icon-coverletter:before,
+.icon-educationhistory:before,
+.icon-interest:before,
 .icon-blogpost:before {
   content: $fa-var-file-text;
 }
@@ -83,9 +90,11 @@
 .icon-navigation:before {
   content: $fa-var-location-arrow;
 }
+
 .icon-newviews:before {
   content: $fa-var-file;
 }
+
 .icon-plans:before {
   content: $fa-var-check-square-o;
 }
@@ -97,6 +106,7 @@
 .icon-textbox:before {
   content: $fa-var-pencil-square-o;
 }
+
 .icon-watchlist:before {
   content: $fa-var-eye;
 }
@@ -147,6 +157,17 @@
   content: $fa-var-music;
 }
 
+.icon-task:before {
+  content: $fa-var-tasks;
+}
+
+.icon-plan:before {
+  content: $fa-var-calendar-check-o;
+}
+
+.icon-collection:before {
+  content: $fa-var-folder-open;
+}
 
 .icon-on-hover {
 

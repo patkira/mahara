@@ -241,11 +241,9 @@
     margin-top: -41px;
 }
 .tag-filters {
+    @extend .clearfix;
     background-color: #f5f5f5;
     padding: 10px 15px;
-}
-.tag-type {
-    font-size: $font-size-large;
 }
 
 // reset the padding when the individual font file is collapsed in font install
@@ -279,4 +277,31 @@
 .loggedindate-container {
     max-width: 250px;
 }
+
+.elasticsearch-filters {
+    .filters {
+        clear: both;
+    }
+    .pieform.form-condensed {
+        .picker {
+            width: 200px;
+            max-width: 100%;
+        }
+        .form-control {
+            width: 100% !important;
+        }
+    }
+    .search-filter-owner {
+        float: left;
+        margin-right: 15px;
+    }
+    .search-results-sort,
+    .search-filter-license {
+        float: none;
+        @media (min-width: $screen-xs-min) {
+            float: right;
+        }
+    }
+}
+
 
